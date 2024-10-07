@@ -1,0 +1,38 @@
+Express js
+- minimal and flexible, 
+- Node.js web application framework,
+- open source,
+- provides a robust set of features for web and mobile applications,
+- provides simple api, and other minimal interface, 
+- numerous module avilable by deffault,
+
+
+why express
+- very flexible and pluggable,
+
+    pug
+    -pug is one of hte most popular language for writing html templates in express, that:
+        - produce html,
+        -Supports dynamic code
+        -Supports reusability (DRY)
+    
+    -MongoDB and Mongoose
+        - open source document database,
+        - designed for ease of development and scaling,
+        - also used to store data,
+        - client api for node.js which makes it easy to access our database from our Express application.
+        
+
+npm and how to use it:
+    - stands for node package manager,
+    - package manager for node,
+    - collection of packages of open-source code for Node.js, front-end web apps, mobile apps, robots, routers, and countless other needs of the JavaScript community,
+how to use npm ?
+    - two way to install npm :
+        1) Globally  : npm install -g <package-name>
+        2) Locally : npm install <package-name> //without -g flag
+        
+
+
+
+
