@@ -1,0 +1,7 @@
+web framework expressjs provede resources such as html, pages, scripts, images etc. at dirrenrent routes
+
+functions used to define routes in an Express app- 
+    - app.<method_name>(path, handler)
+        - this method can be applied to any http verbs - get, set, put delete, 
+    - An alternate method also exists for independent of the request type.
+    - in app.method(path, handler) , path is hte route where the request will run and handeler is callback function that execute relevant route,
