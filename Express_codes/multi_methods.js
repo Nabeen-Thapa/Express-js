@@ -1,11 +1,17 @@
-// We can also have multiple different methods at the same route. For example,
-var express=require('express');
+var express = require('express');
 var app = express();
 
+// GET request
 app.get('/hello', function(req, res){
-    res.send("hello, this is get method 1");
+    res.send("Hello, this is the GET method");
 });
-app.get('/hello', function(req, res){
-    res.send("You just called the post method at '/hello'!\n");
+
+// POST request
+app.post('/hello', function(req, res){
+    res.send("You just called the POST method at '/hello'!");
 });
-app.listen(4100); //localhost:2100
+
+
+app.listen(3000, () => {
+    console.log("Server is running on http://localhost:3000");
+});
