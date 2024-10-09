@@ -6,4 +6,9 @@ syntax :
         //codes
         next();
     });
+
+
+    day 4
+order of middlware calls
+- In Express middleware functions execute in order in which they are written/included in file
  
