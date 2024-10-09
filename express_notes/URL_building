@@ -1,0 +1,19 @@
+building url
+- We have studied static routers up until now
+- we can also create dynamic routes in expressjs for that we SHOULD provide different types of routes
+-dynalic routes allows us to pass parameter and process based on then 
+-You can use the req.params object to access all the parameters you pass in the url. 
+
+
+
+pattern matched routes
+- can also use regex to restrict URL parameter matching
+-Let us assume you need the id to be a 5-digit long number
+
+e.g
+        app.get('/things/:id([0-9]{5})', function(req, res){
+            res.send('id: ' + req.params.id);
+        });
+
+Note that this will only match the requests that have a 5-digit long id.
+ If none of your routes match the request, you'll get a "Cannot GET <your-request-route>" message as response.

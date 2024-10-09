@@ -1,0 +1,8 @@
+http modules 
+http modules transfor request for user/client to server and response form server to user/client using http mothods 
+ 
+ - these methods are :
+    1) GET : it is used to retrive/read data form server or storage.
+    2) POST : it is used write or create or enter new data in the server or storage.
+    3) PUT : ti is used to update/modify existing data, if does not exist it create new data
+    4) DELETE : it is used to delete existing data form storage. 

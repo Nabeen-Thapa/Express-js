@@ -1,0 +1,9 @@
+Express Js Middleware
+-middleware are functions that have access to the request object(req), the presponce(res), and the next middleware functions in the application's request-respoxe cycle.
+-used to modify req and res objects for task
+syntax :
+    app.use(function(req, res, next){
+        //codes
+        next();
+    });
+ 
