@@ -11,4 +11,28 @@ syntax :
     day 4
 order of middlware calls
 - In Express middleware functions execute in order in which they are written/included in file
- 
+
+
+
+third party middleware
+
+body parser 
+- it is used to parse the body of requests,
+- to use body parser we need to install using:
+    npm install --save body-parser
+-and we need to require to use it:
+    var bodyParser = require('body-parser');
+
+cookie parser
+-It is used to parse Cookie header and populate req.cookies with an object keyed by cookie names
+- to use body parser we need to install using:
+    npm install --save cookie-parser
+and then require it:
+    var cookieParser = require('cookie-parser');
+and then use it
+    var cookieParser = require('cookie-parser');
+    app.use(cookieParser())
+
+
+express-session
+It creates a session middleware with the given options. We will discuss its usage in the Sessions section.
