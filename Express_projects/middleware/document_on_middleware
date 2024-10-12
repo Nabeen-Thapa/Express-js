@@ -1,0 +1,92 @@
+ExpressJS Middleware
+-overview
+    -these are functions that have accress to the request(req) and response(res) objects, and next function in the application's request-response cycle,
+    - next function is the reference of next middleware i.e when current middleware finish next() function ference to hte next function.
+
+middleware tasks:
+    - execute any code, 
+    - make changes to the request and response objects,
+    - end the request- responce cycle,
+    - call the next middleware in the stack using next() of current middleware
+
+middleware function have three argunemts ther are:
+    1) req(request): represent http request to the server and contains user detail like pi address of request device, request method(like   GET, POST etc.) , header etc.
+    2) res(response): represent http responce to the client.
+    3) next : next function is the essentail aguments if middleware that allow to pass control form current middleware to next midleware, without next the server will not be roceed to the next step, and don't receive any responce.
+
+![alt text](image.png)
+
+middleware functions that return a Promise will call next(value) when they reject or throw an error. next will be called with either the rejected value or the thrown Error.
+
+
+using middleware:
+
+type of Epxpress middleware:
+    1) Application-level middleware
+    2) router-level middleware
+    3) eror-handeling middleware
+    4) boult-in middleware
+    5) third party middleware
+
+Application_level middlware
+    - Bind application-level middleware to an instance of the app object by using the app.use() and app.METHOD() functions, where METHOD is the HTTP method of the request that the middleware function handles (such as GET, PUT, or POST) in lowercase.
+    e.g: 
+    app.use((req, res, next) => {
+        //response
+    next()
+    });
+    here we write for whole app using app.use() 
+
+
+Router-level middleware
+    Router-level middleware works in the same way as application-level middleware, except it is bound to an instance of express.Router().
+    e.g:  
+        route.get('/middle', (req, res, next){
+        //codes
+        next();
+    });
+    in here the responce will get in /middle route so is is router-level
+
+Error-handling middleware
+    - always takes four arguments: (err, res, req, next)
+    - it is necessary to pass next as argument Otherwise, the next object will be interpreted as regular middleware and will fail to handle errors.
+    e.g:
+    app.use((err, req, res, next) => {
+        //response
+    })
+
+Built-in middleware
+Express has the following built-in middleware functions:
+    - express.static serves static assets such as HTML files, images, and so on.
+    - express.json parses incoming requests with JSON payloads. NOTE: Available with Express 4.16.0+
+    - express.urlencoded parses incoming requests with URL-encoded payloads. NOTE: Available with Express 4.16.0+
+
+Third-party middlware
+    -created by the community and installed as external packages,
+    -perform specific tasks, such as logging, security, request parsing, or session handling, and can be easily integrated into your application.
+    e.g : 
+        morgan: For logging HTTP requests.
+        body-parser: For parsing incoming request bodies (JSON, URL-encoded).
+        helmet: For securing Express apps by setting various HTTP headers.
+        cors: For enabling Cross-Origin Resource Sharing.
+
+
+why middleware ?
+    - Middleware  plays a crucial role in processing incoming requests before they reach the final route handler in Express,
+    - have access to the request object (req), the response object (res), and the next() function. They allow you to add reusable functionality to your application.
+    - code reusable: we can define any middlware once and use that in anywhere in app.
+    - Authentication and Authorization : used to check correct promission for authentication and authorization.
+    -  Error Handling: instate of creating error handeling in every route we can create error handeling middleware once and use that anywhere in app.
+    - File Handling: used to handle files, such as parsing file uploads or serving static files. Express provides express.static middleware to serve static files, like images, CSS, or JavaScript files.
+    - Session and Cookie Management
+
+
+where the middleware used ?
+It is used throughout the applciation to handle various task during the request-response cycle
+
+Typically Used in :
+    Before route handlers: To modify or validate the request before it's processed by the final route handler.
+    After route handlers: To perform tasks after a response has been sent (like logging or cleaning up).
+    Error handling: To catch and process errors throughout the application.
+    Globally: To apply middleware to every request in the app (e.g., security headers, CORS, logging).
+    On specific routes: To apply middleware only to certain routes (e.g., authentication on protected routes).
