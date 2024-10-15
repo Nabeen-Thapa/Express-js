@@ -65,5 +65,19 @@ why WJT ?
     -JWT tokens can use a public/private key pair in the form of a X:509 certificate for signing
     -easy to siginig Digital signature compare to xml,
     -JSON parses directly objects which is common in most laguage, this make easy to eork with JWT
-    - 
+    
 
+    10 ways to to exploit JWT
+        First of all, You need to know what data is being sent in the JWT (baseline analysis) because JWT tokens contain a payload that includes information about the user, such as their username and role. An attacker may try to tamper with the payload to change the user’s role, try to get the highest privileges or inject malicious data into the token payload.
+
+        the ways are :
+        1) crack the token
+        2) NUll signature attack
+        3) None attract
+        4) Blank password
+        5) Playbook Scan
+        6) key-confusion attack
+        7) bypass JWT Authentication by X-HTTP-Method-Override header
+        8)  Tampering with token payloads
+        9) Token Replay Attacks
+        10) TOken stealing
