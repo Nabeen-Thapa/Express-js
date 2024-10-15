@@ -1,0 +1,28 @@
+NPM dotenv 
+    - A popular npm package used in NodeJS applications to manage environment variables. Environment variables are values that are set outside of an application’s code and are accessible to the application during runtime. These variables often contain sensitive information like API keys, database connection strings, or configuration settings.
+
+    features of dotenv
+        - simplified loading : simplifies the process of loading environment variables from a ‘.env’ file into Node.js
+        - Improved security: By keeping sensitive information like API keys, database passwords, and other secrets out of your code and in a separate ‘.env’ file,
+        -Compatibility: The package is widely compatible with various Node.js frameworks and libraries
+
+    working fo dotenv
+        -loading environmental variables in KEY= VALUE format:
+            _PORT = 3000
+            API_KEY = localhost
+            API_PASS= mypassword
+
+        -Parsing and Setting Environment Variables using process.env.VARIABLE_NAME :
+            const PORT = process.env.PORT 
+            const API_KEY = process.env.API_KEY
+        
+    steps to setup application uisng dotenv
+        Step 1: Create a application using the following command:
+            npm init -y
+            cd foldername
+        Step 2: Use npm to install dotenv and express package.
+            npm i dotenv express 
+        Step 3: Create a ‘.env’ file in the root directory and set your sensitive or Important variables.
+            _PORT = 8000
+            API_KEY = 'XXXXXX'
+            ACCESS_TOKEN = 'XXXXXXX'
