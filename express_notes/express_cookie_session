@@ -1,0 +1,42 @@
+express cookie
+    -small files/data(store user detail or login credetial like username, user id etc,) that are sent to client with a server request and stored on the client side, so that user don' have to login next time in that site (if cookie is stores or not destroyed) .
+    -every time the user loads webiste back, this cookie is sent back with the request to the server so that server know the user.
+
+    The following are the numerous uses of the HTTP Cookies −
+        -Session management
+        -Personalization(Recommendation systems)
+        -User tracking
+
+    to use cookie with express install this:
+        npm install --save cookie-parser 
+        (you can write i instate of install and -- save is optional)
+
+        Now to use cookies with Express, we will require the cookie-parser. cookie-parser is a middleware which parses cookies attached to the client request object.
+
+        cookie-parser parses Cookie header and populates req.cookies with an object keyed by the cookie names.
+
+        -adding cookie with expire time
+            - two way
+                -expire property -just pass an object with property 'expire' set to the time when you want it to expire
+                - maxAge promerty: Using this property, we can provide relative time instead of absolute time
+
+        - deleting existing cookie
+            To delete a cookie, use the clearCookie function.
+
+
+
+
+express session
+    - A session is a way to store user information across multiple requests,
+    - When a user logs in, the server creates a session, assigns it a unique session ID, and sends that ID to the user's browser, typically as a cookie. This session ID allowing it to remember user information without requiring the user to log in again each time.
+   - sessions are used to keep a user "logged in" or to store temporary data about them while they use a website.
+
+   code to use Express-session:
+    npm install --save express-session
+
+    Whenever same make a request again, user information stored with session, so he don't have to give his login information again
+
+
+
+
+
